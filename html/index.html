@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="cn_zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lcy lang</title>
+    <link rel="stylesheet" href="../css/main.css" type="text/css">
+    <link rel="stylesheet" href="../css/lcy-lang.css" type="text/css">
+</head>
+
+<body>
+    <!--root div-->
+    <div id="root">
+        <!--top bar-->
+        <div class="bar" id="header">
+            <p class="title">lcy 语言</p>
+            <p class="subtitle">By egglzh</p>
+        </div>
+        <div class="block" id="description">
+            <h3>简介</h3>
+            <p>lcy-lang是一个强类型的数据交换语言</p>
+            <p>适用于配置文件</p>
+        </div>
+        <div class="block" id="syntax">
+            <h3>基础语法</h3>
+            <div class="code">
+                <p>key : type = value @change_sign ;</p>
+                <p># 单行注释</p>
+                <p>//单行注释</p>
+                <p>/*块注释*/</p>
+                <p>/*</p>
+                <p>块注释</p>
+                <p>*/</p>
+            </div>
+            <p>注:change_sign可不显示声明</p>
+            <p>若未声明change_sign等同于@__default_change_sign__</p>
+        </div>
+        <div class="block" id="type_system">
+            <h3>类型系统</h3>
+            <div class="block">
+                <p>lcy 语言的类型系统是静态的，支持基本类型、复合类型和自定义类型。</p>
+                <p>以下是 lcy 语言中常用的类型注解：</p>
+                <p>注:T为正常类型,S为大小,E为错误类型</p>
+            </div>
+            <div class="block">
+                <table>
+                    <tr>
+                        <td>名称</td>
+                        <td>类型注解</td>
+                        <td>示例</td>
+                    </tr>
+                    <tr>
+                        <td>整数</td>
+                        <td>int</td>
+                        <td>
+                            <div class="code">
+                                <p>num : int = 1 ;</p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>浮点数</td>
+                        <td>float</td>
+                        <td>
+                            <div class="code">
+                                <p>num : float = 2.0 ;</p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>布尔值</td>
+                        <td>bool</td>
+                        <td>
+                            <div class="code">
+                                <p>flag : bool = true ;</p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>字符串</td>
+                        <td>str</td>
+                        <td>
+                            <div class="code">
+                                <p>text : str = "Hello, World!" ;</p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>数组</td>
+                        <td>arr[T,S]</td>
+                        <td>
+                            <div class="code">
+                                <p>arr : arr[int, 5] = [1, 2, 3, 4, 5] ;</p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>元组</td>
+                        <td>tup[T1,T2,T3......]</td>
+                        <td>
+                            <div class="code">
+                                <p>tup : tup[int, str] = (1, "Hello") ;</p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>可空值</td>
+                        <td>opt[T]</td>
+                        <td>
+                            <div class="code">
+                                <p>value1 : opt[int] = null ;</p>
+                                <p>value2 : opt[int] = some(2) ;</p>
+                            </div>
+                    </tr>
+                    <tr>
+                        <td>返回值（含错误）</td>
+                        <td>ret[T,E]</td>
+                        <td>
+                            <div class="code">
+                                <p>result : ret[int,str] = ok(1) ;</p>
+                                <p>error : ret[int,str] = err("Error message") ;</p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>对象</td>
+                        <td>obj</td>
+                        <td>
+                            <div class="code">
+                                <p>person : obj = { </p>
+                                <p>&nbsp name : str = "Alice"; </p>
+                                <p>&nbsp age : int = 30; </p>
+                                <p>} </p>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="block" id="change_sign">
+            <h3>转换标记(change_sign)</h3>
+            <p>change_sign可以让lcy解析器预处理数据</p>
+            <p>change_sign中只能含有大小写字母,数字,连字符,下划线</p>
+            <p>change_sign使用前需要把实现的方法(函数)注册到对应的change_sing上</p>
+            <p>如果没有注册一律以注册到@__default_change_sign__的方法处理</p>
+            <p>以下是默认实现的change_sing</p>
+            <div class="block">
+                <table>
+                    <tr>
+                        <td>change_sign</td>
+                        <td>描述</td>
+                        <td>适用类型</td>
+                    </tr>
+                    <tr>
+                        <td>@__default_change_sign__</td>
+                        <td>默认转换标记，直接返回原数据</td>
+                        <td>所有类型</td>
+                    </tr>
+                    <tr>
+                        <td>@trim</td>
+                        <td>去除字符串首尾的空格,换行符,制表符</td>
+                        <td>str</td>
+                    </tr>
+                    <tr>
+                        <td>@to_lower</td>
+                        <td>将字符串转换为小写</td>
+                        <td>str</td>
+                    </tr>
+                    <tr>
+                        <td>@to_upper</td>
+                        <td>将字符串转换为大写</td>
+                        <td>str</td>
+                    </tr>
+                    <tr>
+                        <td>@to_path</td>
+                        <td>将字符串,元组,列表转换为Path对象</td>
+                        <td>str, tup[srt,str.str...], arr[str,S]</td>
+                    </tr>
+                    <tr>
+                        <td>@to_time</td>
+                        <td>将时间戳转换为time对象</td>
+                        <td>int</td>
+                    </tr>
+                    <tr>
+                        <td>@to_url</td>
+                        <td>将字符串转换为URL对象</td>
+                        <td>str</td>
+                    </tr>
+                    <tr>
+                        <td>@insert_other_file</td>
+                        <td>将其他文件(*.ini,*,json,*.lcy,*.toml,*.yml,*.prop,<br>*.cfg,*.txt(以lcy语法编写),*.xml(会丢失标签属性))<br>的解析后内容插入到当前文件中</td>
+                        <td>同@to_path</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+</body>
+
+</html>
