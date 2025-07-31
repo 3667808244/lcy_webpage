@@ -39,8 +39,8 @@
         <div class="block" id="type_system">
             <h3>类型系统</h3>
             <div class="block">
-                <p>lcy 语言的类型系统是静态的，支持基本类型、复合类型和自定义类型。</p>
-                <p>以下是 lcy 语言中常用的类型注解：</p>
+                <p>lcy 语言的类型系统是静态的，支持基本类型、复合类型。</p>
+                <p>以下是 lcy-lang 中常用的类型注解:</p>
                 <p>注:T为正常类型,S为大小,E为错误类型</p>
             </div>
             <div class="block">
@@ -49,6 +49,7 @@
                         <td>名称</td>
                         <td>类型注解</td>
                         <td>示例</td>
+                        <td>适用版本</td>
                     </tr>
                     <tr>
                         <td>整数</td>
@@ -58,6 +59,7 @@
                                 <p>num : int = 1 ;</p>
                             </div>
                         </td>
+                        <td>&gt;=0.0.1</td>
                     </tr>
                     <tr>
                         <td>浮点数</td>
@@ -67,6 +69,7 @@
                                 <p>num : float = 2.0 ;</p>
                             </div>
                         </td>
+                        <td>&gt;=0.0.1</td>     
                     </tr>
                     <tr>
                         <td>布尔值</td>
@@ -76,6 +79,7 @@
                                 <p>flag : bool = true ;</p>
                             </div>
                         </td>
+                        <td>&gt;=0.0.1</td>
                     </tr>
                     <tr>
                         <td>字符串</td>
@@ -85,6 +89,7 @@
                                 <p>text : str = "Hello, World!" ;</p>
                             </div>
                         </td>
+                        <td>&gt;=0.0.1</td>
                     </tr>
                     <tr>
                         <td>数组</td>
@@ -94,6 +99,7 @@
                                 <p>arr : arr[int, 5] = [1, 2, 3, 4, 5] ;</p>
                             </div>
                         </td>
+                        <td>&gt;=0.0.1</td>
                     </tr>
                     <tr>
                         <td>元组</td>
@@ -103,6 +109,7 @@
                                 <p>tup : tup[int, str] = (1, "Hello") ;</p>
                             </div>
                         </td>
+                        <td>&gt;=0.0.1</td>
                     </tr>
                     <tr>
                         <td>可空值</td>
@@ -112,6 +119,8 @@
                                 <p>value1 : opt[int] = null ;</p>
                                 <p>value2 : opt[int] = some(2) ;</p>
                             </div>
+                        </td>
+                        <td>&gt;=0.0.1</td>
                     </tr>
                     <tr>
                         <td>返回值（含错误）</td>
@@ -122,6 +131,21 @@
                                 <p>error : ret[int,str] = err("Error message") ;</p>
                             </div>
                         </td>
+                        <td>&gt;=0.0.1</td>
+                    </tr>
+                    <tr>
+                        <td>指针</td>
+                        <td>ptr[T]</td>
+                        <td>
+                            <div class="code">
+                                <p>num : int = 10 ;</p>
+                                <p>ptr : ptr[int] = &num ;</p>
+                                <p>ptr_2 : ptr[ptr[int]] = &ptr ;</p>
+                                <p># 解析时会直接把num的值覆盖掉ptr的值</p>
+                                <p># 然后在把ptr_2用ptr覆盖</p>
+                            </div>
+                        </td>
+                        <td>&gt;=0.0.2</td>
                     </tr>
                     <tr>
                         <td>对象</td>
@@ -134,6 +158,7 @@
                                 <p>} </p>
                             </div>
                         </td>
+                        <td>&gt;=0.0.1</td>
                     </tr>
                 </table>
             </div>
@@ -151,50 +176,91 @@
                         <td>change_sign</td>
                         <td>描述</td>
                         <td>适用类型</td>
+                        <td>适用版本</td>
                     </tr>
                     <tr>
                         <td>@__default_change_sign__</td>
                         <td>默认转换标记，直接返回原数据</td>
                         <td>所有类型</td>
+                        <td>&gt;=0.0.1</td>
                     </tr>
                     <tr>
                         <td>@trim</td>
                         <td>去除字符串首尾的空格,换行符,制表符</td>
                         <td>str</td>
+                        <td>&gt;=0.0.1</td>
                     </tr>
                     <tr>
                         <td>@to_lower</td>
                         <td>将字符串转换为小写</td>
                         <td>str</td>
+                        <td>&gt;=0.0.1</td>
                     </tr>
                     <tr>
                         <td>@to_upper</td>
                         <td>将字符串转换为大写</td>
                         <td>str</td>
+                        <td>&gt;=0.0.1</td>
                     </tr>
                     <tr>
                         <td>@to_path</td>
                         <td>将字符串,元组,列表转换为Path对象</td>
                         <td>str, tup[srt,str.str...], arr[str,S]</td>
+                        <td>&gt;=0.0.1</td>
                     </tr>
                     <tr>
                         <td>@to_time</td>
                         <td>将时间戳转换为time对象</td>
                         <td>int</td>
+                        <td>&gt;=0.0.1</td>
                     </tr>
                     <tr>
                         <td>@to_url</td>
                         <td>将字符串转换为URL对象</td>
                         <td>str</td>
+                        <td>&gt;=0.0.1</td>
                     </tr>
                     <tr>
                         <td>@insert_other_file</td>
-                        <td>将其他文件(*.ini,*,json,*.lcy,*.toml,*.yml,*.prop,<br>*.cfg,*.txt(以lcy语法编写),*.xml(会丢失标签属性))<br>的解析后内容插入到当前文件中
+                        <td>将其他文件(*.ini,*,json,*.lcy,*.toml,*.yml,*.prop,
+                            <br>*.cfg,*.txt(以lcy语法编写),*.xml(会丢失标签属性))
+                            <br>的解析后内容插入到当前文件中
                         </td>
                         <td>同@to_path</td>
+                        <td>&gt;=0.0.1</td>
+                    </tr>
+                    <tr>
+                        <td>@escape</td>
+                        <td>将字符串中的转义符转义</td>
+                        <td>str</td>
+                        <td>&gt;=0.0.2</td>
                     </tr>
                 </table>
             </div>
+        </div>
+        <div class="block" id="example">
+            <h3>示例</h3>
+            <p>以下是一个lcy-lang的示例代码:</p>
+            <div class="code">
+                <p>name : str = "lcy-lang" @to_upper ;</p>
+                <p>version : float = 1.0 ;</p>
+                <p>features : arr[str, 3] = ["type system", "syntax", "example"] ;</p>
+                <p>config : obj = {</p>
+                <p>&nbsp;&nbsp;enabled : bool = true ;</p>
+                <p>&nbsp;&nbsp;timeout : int = 30 ;</p>
+                <p>};</p>
+            </div>
+            <p>解析为:(py)</p>
+            <div class="code">
+                <p>{</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;'name'&nbsp;:&nbsp;'LCY-LANG'&nbsp;,</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;'version'&nbsp;:&nbsp;1.0&nbsp;,</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;'features'&nbsp;:&nbsp;['type system',&nbsp;'syntax',&nbsp;'example']&nbsp;,</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;'config'&nbsp;:&nbsp;{</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'enabled'&nbsp;:&nbsp;True&nbsp;,</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'timeout'&nbsp;:&nbsp;30&nbsp;,</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+                <p>}</p>
         </div>
         <div class="block" id="library">
             <h3>Lib</h3>
