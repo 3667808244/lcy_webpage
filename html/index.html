@@ -25,13 +25,33 @@
         <div class="block" id="syntax">
             <h3>基础语法</h3>
             <div class="code">
-                <p>key : type = value @change_sign ;</p>
-                <p># 单行注释</p>
-                <p>//单行注释</p>
-                <p>/*块注释*/</p>
-                <p>/*</p>
-                <p>块注释</p>
-                <p>*/</p>
+                <p>
+                    <color class="red">key</color>
+                    <color class="yellow">:</color>
+                    <color class="green">type</color>
+                    <color class="yellow">=</color>
+                    <color class="blue">value</color>
+                    <color class="purple">@change_sign</color>
+                    <color class="yellow">;</color>
+                </p>
+                <p>
+                    <color class="green"># 单行注释</color>
+                </p>
+                <p>
+                    <color class="green">//单行注释</color>
+                </p>
+                <p>
+                    <color class="green">/*块注释*/</color>
+                </p>
+                <p>
+                    <color class="green">/*</color>
+                </p>
+                <p>
+                    <color class="green">块注释</color>
+                </p>
+                <p>
+                    <color class="green">*/</color>
+                </p>
             </div>
             <p>注:change_sign可不显示声明</p>
             <p>若未声明change_sign等同于@__default_change_sign__</p>
@@ -56,7 +76,14 @@
                         <td>int</td>
                         <td>
                             <div class="code">
-                                <p>num : int = 1 ;</p>
+                                <p>
+                                    <color class="red">num</color>
+                                    <color class="yellow">:</color>
+                                    <color class="green">int</color>
+                                    <color class="yellow">=</color>
+                                    <color class="blue">1</color>
+                                    <color class="yellow">;</color>
+                                </p>
                             </div>
                         </td>
                         <td>&gt;=0.0.1</td>
@@ -66,17 +93,31 @@
                         <td>float</td>
                         <td>
                             <div class="code">
-                                <p>num : float = 2.0 ;</p>
+                                <p>
+                                    <color class="red">num</color>
+                                    <color class="yellow">:</color>
+                                    <color class="green">float</color>
+                                    <color class="yellow">=</color>
+                                    <color class="blue">2.0</color>
+                                    <color class="yellow">;</color>
+                                </p>
                             </div>
                         </td>
-                        <td>&gt;=0.0.1</td>     
+                        <td>&gt;=0.0.1</td>
                     </tr>
                     <tr>
                         <td>布尔值</td>
                         <td>bool</td>
                         <td>
                             <div class="code">
-                                <p>flag : bool = true ;</p>
+                                <p>
+                                    <color class="red">flag</color>
+                                    <color class="yellow">:</color>
+                                    <color class="green">bool</color>
+                                    <color class="yellow">=</color>
+                                    <color class="blue">true</color>
+                                    <color class="yellow">;</color>
+                                </p>
                             </div>
                         </td>
                         <td>&gt;=0.0.1</td>
@@ -86,7 +127,14 @@
                         <td>str</td>
                         <td>
                             <div class="code">
-                                <p>text : str = "Hello, World!" ;</p>
+                                <p>
+                                    <color class="red">text</color>
+                                    <color class="yellow">:</color>
+                                    <color class="green">str</color>
+                                    <color class="yellow">=</color>
+                                    <color class="blue">"Hello, World!"</color>
+                                    <color class="yellow">;</color>
+                                </p>
                             </div>
                         </td>
                         <td>&gt;=0.0.1</td>
@@ -96,7 +144,14 @@
                         <td>arr[T,S]</td>
                         <td>
                             <div class="code">
-                                <p>arr : arr[int, 5] = [1, 2, 3, 4, 5] ;</p>
+                                <p>
+                                    <color class="red">arr</color>
+                                    <color class="yellow">:</color>
+                                    <color class="green">arr[int, 5]</color>
+                                    <color class="yellow">=</color>
+                                    <color class="blue">[1, 2, 3, 4, 5]</color>
+                                    <color class="yellow">;</color>
+                                </p>
                             </div>
                         </td>
                         <td>&gt;=0.0.1</td>
@@ -106,7 +161,14 @@
                         <td>tup[T1,T2,T3......]</td>
                         <td>
                             <div class="code">
-                                <p>tup : tup[int, str] = (1, "Hello") ;</p>
+                                <p>
+                                    <color class="red">tup</color>
+                                    <color class="yellow">:</color>
+                                    <color class="green">tup[int, str]</color>
+                                    <color class="yellow">=</color>
+                                    <color class="blue">(1, "Hello")</color>
+                                    <color class="yellow">;</color>
+                                </p>
                             </div>
                         </td>
                         <td>&gt;=0.0.1</td>
@@ -116,8 +178,22 @@
                         <td>opt[T]</td>
                         <td>
                             <div class="code">
-                                <p>value1 : opt[int] = null ;</p>
-                                <p>value2 : opt[int] = some(2) ;</p>
+                                <p>
+                                    <color class="red">value1</color>
+                                    <color class="yellow">:</color>
+                                    <color class="green">opt[int]</color>
+                                    <color class="yellow">=</color>
+                                    <color class="blue">null</color>
+                                    <color class="yellow">;</color>
+                                </p>
+                                <p>
+                                    <color class="red">value2</color>
+                                    <color class="yellow">:</color>
+                                    <color class="green">opt[int]</color>
+                                    <color class="yellow">=</color>
+                                    <color class="blue">some(2)</color>
+                                    <color class="yellow">;</color>
+                                </p>
                             </div>
                         </td>
                         <td>&gt;=0.0.1</td>
@@ -127,8 +203,22 @@
                         <td>ret[T,E]</td>
                         <td>
                             <div class="code">
-                                <p>result : ret[int,str] = ok(1) ;</p>
-                                <p>error : ret[int,str] = err("Error message") ;</p>
+                                <p>
+                                    <color class="red">result</color>
+                                    <color class="yellow">:</color>
+                                    <color class="green">ret[int,str]</color>
+                                    <color class="yellow">=</color>
+                                    <color class="blue">ok(1)</color>
+                                    <color class="yellow">;</color>
+                                </p>
+                                <p>
+                                    <color class="red">error</color>
+                                    <color class="yellow">:</color>
+                                    <color class="green">ret[int,str]</color>
+                                    <color class="yellow">=</color>
+                                    <color class="blue">err("Error message")</color>
+                                    <color class="yellow">;</color>
+                                </p>
                             </div>
                         </td>
                         <td>&gt;=0.0.1</td>
@@ -138,11 +228,36 @@
                         <td>ptr[T]</td>
                         <td>
                             <div class="code">
-                                <p>num : int = 10 ;</p>
-                                <p>ptr : ptr[int] = &num ;</p>
-                                <p>ptr_2 : ptr[ptr[int]] = &ptr ;</p>
-                                <p># 解析时会直接把num的值覆盖掉ptr的值</p>
-                                <p># 然后在把ptr_2用ptr覆盖</p>
+                                <p>
+                                    <color class="red">num</color>
+                                    <color class="yellow">:</color>
+                                    <color class="green">int</color>
+                                    <color class="yellow">=</color>
+                                    <color class="blue">10</color>
+                                    <color class="yellow">;</color>
+                                </p>
+                                <p>
+                                    <color class="red">ptr</color>
+                                    <color class="yellow">:</color>
+                                    <color class="green">ptr[int]</color>
+                                    <color class="yellow">=</color>
+                                    <color class="blue">&num</color>
+                                    <color class="yellow">;</color>
+                                </p>
+                                <p>
+                                    <color class="red">ptr_2</color>
+                                    <color class="yellow">:</color>
+                                    <color class="green">ptr[ptr[int]]</color>
+                                    <color class="yellow">=</color>
+                                    <color class="blue">&ptr</color>
+                                    <color class="yellow">;</color>
+                                </p>
+                                <p>
+                                    <color class="green"># 解析时会直接把num的值覆盖掉ptr的值</color>
+                                </p>
+                                <p>
+                                    <color class="green"># 然后在把ptr_2用ptr覆盖</color>
+                                </p>
                             </div>
                         </td>
                         <td>&gt;=0.0.2</td>
@@ -152,13 +267,50 @@
                         <td>obj</td>
                         <td>
                             <div class="code">
-                                <p>person : obj = { </p>
-                                <p>&nbsp;&nbsp;name : str = "Alice"; </p>
-                                <p>&nbsp;&nbsp;age : int = 30; </p>
-                                <p>} </p>
+                                <p>
+                                    <color class="red">person</color>
+                                    <color class="yellow">:</color>
+                                    <color class="green">obj</color>
+                                    <color class="yellow">=</color>
+                                    <color class="yellow">{</color>
+                                </p>
+                                <p>&nbsp;&nbsp;<color class="red">name</color>
+                                    <color class="yellow">:</color>
+                                    <color class="green">str</color>
+                                    <color class="yellow">=</color>
+                                    <color class="blue">"Alice"</color>
+                                    <color class="yellow">;</color>
+                                </p>
+                                <p>&nbsp;&nbsp;<color class="red">age</color>
+                                    <color class="yellow">:</color>
+                                    <color class="green">int</color>
+                                    <color class="yellow">=</color>
+                                    <color class="blue">30</color>
+                                    <color class="yellow">;</color>
+                                </p>
+                                <p>
+                                    <color class="yellow">}</color>
+                                </p>
                             </div>
                         </td>
                         <td>&gt;=0.0.1</td>
+                    </tr>
+                    <tr>
+                        <td>自动推断</td>
+                        <td>auto</td>
+                        <td>
+                            <div class="code">
+                                <p>
+                                    <color class="red">auto_value</color>
+                                    <color class="yellow">:</color>
+                                    <color class="green">auto</color>
+                                    <color class="yellow">=</color>
+                                    <color class="blue">"Hello, World!"</color>
+                                    <color class="yellow">;</color>
+                                </p>
+                            </div>
+                        </td>
+                        <td>&gt;=0.0.2</td>
                     </tr>
                 </table>
             </div>
@@ -238,29 +390,120 @@
                 </table>
             </div>
         </div>
+        <div class="block" id="features">
+            <h3>高级特性</h3>
+            <div class="block" id="auto_type">
+                <h4>类型:auto</h4>
+                <p>类型auto会根据赋值的内容自动推断类型</p>
+                <p>auto类型可以用于所有lcy-lang所支持的类型</p>
+            </div>
+        </div>
         <div class="block" id="example">
             <h3>示例</h3>
-            <p>以下是一个lcy-lang的示例代码:</p>
-            <div class="code">
-                <p>name : str = "lcy-lang" @to_upper ;</p>
-                <p>version : float = 1.0 ;</p>
-                <p>features : arr[str, 3] = ["type system", "syntax", "example"] ;</p>
-                <p>config : obj = {</p>
-                <p>&nbsp;&nbsp;enabled : bool = true ;</p>
-                <p>&nbsp;&nbsp;timeout : int = 30 ;</p>
-                <p>};</p>
+            <div class="block">
+                <h3>标准语法</h3>
+                <div class="code">
+                    <p>
+                        <color class="red">name</color>
+                        <color class="yellow">:</color>
+                        <color class="green">str</color>
+                        <color class="yellow">=</color>
+                        <color class="blue">"lcy-lang"</color>
+                        <color class="purple">@to_upper</color>
+                        <color class="yellow">;</color>
+                    </p>
+                    <p>
+                        <color class="red">version</color>
+                        <color class="yellow">:</color>
+                        <color class="green">float</color>
+                        <color class="yellow">=</color>
+                        <color class="blue">1.0</color>
+                        <color class="yellow">;</color>
+                    </p>
+                    <p>
+                        <color class="red">features</color>
+                        <color class="yellow">:</color>
+                        <color class="green">arr[str, 3]</color>
+                        <color class="yellow">=</color>
+                        <color class="blue">["type system", "syntax", "example"]</color>
+                        <color class="yellow">;</color>
+                    </p>
+                    <p>
+                        <color class="red">config</color>
+                        <color class="yellow">:</color>
+                        <color class="green">obj</color>
+                        <color class="yellow">=</color>
+                        <color class="yellow">{</color>
+                    </p>
+                    <p>&nbsp;&nbsp;<color class="red">enabled</color>
+                        <color class="yellow">:</color>
+                        <color class="green">bool</color>
+                        <color class="yellow">=</color>
+                        <color class="blue">true</color>
+                        <color class="yellow">;</color>
+                    </p>
+                    <p>&nbsp;&nbsp;<color class="red">timeout</color>
+                        <color class="yellow">:</color>
+                        <color class="green">int</color>
+                        <color class="yellow">=</color>
+                        <color class="blue">30</color>
+                        <color class="yellow">;</color>
+                    </p>
+                    <p>
+                        <color class="yellow">};</color>
+                    </p>
+                </div>
+                <p>解析为:(py)</p>
+                <div class="code">
+                    <p>{</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;'name'&nbsp;:&nbsp;'LCY-LANG'&nbsp;,</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;'version'&nbsp;:&nbsp;1.0&nbsp;,</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;'features'&nbsp;:&nbsp;['type
+                        system',&nbsp;'syntax',&nbsp;'example']&nbsp;,</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;'config'&nbsp;:&nbsp;{</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'enabled'&nbsp;:&nbsp;True&nbsp;,</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'timeout'&nbsp;:&nbsp;30&nbsp;,</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+                    <p>}</p>
+                </div>
             </div>
-            <p>解析为:(py)</p>
-            <div class="code">
-                <p>{</p>
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;'name'&nbsp;:&nbsp;'LCY-LANG'&nbsp;,</p>
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;'version'&nbsp;:&nbsp;1.0&nbsp;,</p>
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;'features'&nbsp;:&nbsp;['type system',&nbsp;'syntax',&nbsp;'example']&nbsp;,</p>
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;'config'&nbsp;:&nbsp;{</p>
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'enabled'&nbsp;:&nbsp;True&nbsp;,</p>
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'timeout'&nbsp;:&nbsp;30&nbsp;,</p>
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
-                <p>}</p>
+            <div class="block">
+                <h3>指针示例</h3>
+                <div class="code">
+                    <p>
+                        <color class="red">num</color>
+                        <color class="yellow">:</color>
+                        <color class="green">int</color>
+                        <color class="yellow">=</color>
+                        <color class="blue">10</color>
+                        <color class="yellow">;</color>
+                    </p>
+                    <p>
+                        <color class="red">ptr</color>
+                        <color class="yellow">:</color>
+                        <color class="green">ptr[int]</color>
+                        <color class="yellow">=</color>
+                        <color class="blue">&num</color>
+                        <color class="yellow">;</color>
+                    </p>
+                    <p>
+                        <color class="red">ptr2</color>
+                        <color class="yellow">:</color>
+                        <color class="green">ptr[ptr[int]]</color>
+                        <color class="yellow">=</color>
+                        <color class="blue">&ptr</color>
+                        <color class="yellow">;</color>
+                    </p>
+                </div>
+                <p>解析为:(py)</p>
+                <div class="code">
+                    <p>{</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;'num' : 10</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;'ptr' : 10</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;'ptr2' : 10</p>
+                    <p>}</p>
+                </div>
+            </div>
         </div>
         <div class="block" id="library">
             <h3>Lib</h3>
